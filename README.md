@@ -18,7 +18,7 @@ A simple full-stack TODO application where users can:
 
 ## 📦 Tech Stack
 
-- **Frontend:** 
+- **Frontend:** React.ja
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB (via Mongoose)
 
@@ -30,7 +30,7 @@ A simple full-stack TODO application where users can:
 
 ```bash
 https://github.com/yashveersinghh/TODO.git
-cd TODO
+cd backend
 
 # Install all dependencies
 npm install
