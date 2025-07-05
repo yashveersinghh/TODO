@@ -1,5 +1,7 @@
 const express = require ('express');
-const { createTodo, updateTodo } = require('/types.js');
+require('dotenv').config();
+const { createTodo, updateTodo } = require('./types.js');
+const todo = require('./db');
 const app = express();
 
 app.use(express.json());
@@ -37,14 +39,10 @@ app.put("/completed",async(req,res)=>{
         })
         return;
     }
-    const todo = await todo.update({
-        _id: req.body.id
-    }, {
-        completed: true
+    const todo = await todo.update({ _id: req.body.id }, { completed: true });
+    res.json({
+        msg: "Todo marked as completed!"
     })
-})
-res.json({
-    msg: "Todo marked as completed!"
 })
 
 app.listen(3000, () => {
