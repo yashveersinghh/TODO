@@ -39,7 +39,11 @@ app.put("/completed",async(req,res)=>{
         })
         return;
     }
-    const todo = await todo.update({ _id: req.body.id }, { completed: true });
+    const todo = await todo.update({ 
+        _id: req.body.id 
+    }, { 
+        completed: true 
+    });
     res.json({
         msg: "Todo marked as completed!"
     })
