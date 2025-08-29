@@ -6,9 +6,8 @@ const cors = require("cors");
 
 const app = express();
 
-app.use(cors({
-    origin: "https://localhost:5173"
-}));
+app.use(cors());
+
 app.use(express.json());
 
 app.post("/todo", async(req,res)=>{
@@ -44,9 +43,7 @@ app.put("/completed",async(req,res)=>{
         })
         return;
     }
-    const todo = await todo.update({ 
-        _id: req.body.id 
-    }, { 
+    await todo.findByIdAndUpdate(req.body.id, { 
         completed: true 
     });
     res.json({
