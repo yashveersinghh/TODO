@@ -25,8 +25,9 @@ export function CreateTodo({ onTodoAdded }){
         <h1 style={{ textAlign: "center", marginBottom: "25px", fontFamily: "sans-serif" }}>My Todo App</h1>
             <input 
                 type="text" 
-                placeholder="Title" onChange={function(e){
-                setTitle(e.target.value);
+                placeholder="Title" 
+                onChange={function(e){
+                  setTitle(e.target.value);
             }}
             style={{
             width: "80%",
